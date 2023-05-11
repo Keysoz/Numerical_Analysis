@@ -10,3 +10,5 @@ and write the next code to install PyQt5-tools
 ```
 pip install pyqt-tools
 ```
+# Screenshos of the programm
+![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot1.png)
