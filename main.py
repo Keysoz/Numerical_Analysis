@@ -186,94 +186,97 @@ def false_position(xl, xu, e):
 #     my_write_file = open('methods/fixed_point.txt', 'a')
 #     my_write_file.write('\nRequired Root is : %0.8f=' % xr)
 #     my_write_file.close()
-# def newtonRaphson(xl, e):
-#     my_write_file = open('methods/newton.txt', 'a')
-#     my_write_file.write(
-#         '\n\n** Newton METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
-#     my_write_file.close()
-#     step = 1
-#     flag = 1
-#     old=0
-#     xr=0
-#     fristIteration = True
-#     condition = True
-#     while condition:
-#         old = xr
-#         if gi(xl) == 0:
-#             print('Divide by zero error!')
-#             break
-#         xr = xl - (f(xl) / gi(xl))
-#         if fristIteration == True:
-#             l=0
-#             my_write_file = open('methods/false_position.txt', 'a')
-#             my_write_file.write((
-#                     'Iteration %d | xl = %0.6f | f(xl) = %0.6f | gi(xl)= %0.6f |
-#                     'xr = %0.6f | f(xr) = %0.6f | error =%.2f\n' % (
-#                         step, xl, f(xl),  gi(xl), xr, f(xr), l)))
-#             my_write_file.close()
-#         else:
-#             l = abs((xr - old) / xr) * 100
-#             my_write_file = open('methods/false_position.txt', 'a')
-#             my_write_file.write((
-#                     'Iteration %d | xl = %0.6f | f(xl) = %0.6f | gi(xl)= %0.6f |
-# #                     'xr = %0.6f | f(xr) = %0.6f | error =%.2f\n' % (
-# #                         step, xl, f(xl),  gi(xl), xr, f(xr), l)))
-#             my_write_file.close()
-#         condition = abs(((xr - old) / xr) * 100) >= e
-#         xl = xr
-#         step = step + 1
-#     if condition == False:
-#         my_write_file = open('methods/false_position.txt', 'a')
-#         my_write_file.write('\nRequired Root is : %0.8f=' % xr)
-#         my_write_file.close()
-#     else:
-#         my_write_file = open('methods/false_position.txt', 'a')
-#         my_write_file.write('\nNot Convergent.')
-#         my_write_file.close()
-# def secant(x0, x1, e):
-#     step = 1
-#     my_write_file = open('methods/bisection.txt', 'a')
-#     my_write_file.write('\n\n** BISECTION METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
-#     my_write_file.close()
-#     condition = True
-#     old = 0
-#     xr = 0
-#     first_iteration = True
-#     first_iteration1 = True
-#     while condition:
-#         old = xr
-#         xr = x0 - (x1 - x0) * f(x0) / (f(x1) - f(x0))
-#
-#         if first_iteration:
-#             l = 0
-#             my_write_file = open('methods/bisection.txt', 'a')
-#             my_write_file.write((
-#                     'Iteration %d | xl = %0.6f | f(xl) = %0.6f | xu = %0.6f | f(xu) = %0.6f | '
-#                     'xr = %0.6f | f(xr) = %0.6f | error =%.2f\n' % (
-#                         step, x0, f(x0), x1, f(x1), xr, f(xr), l)))
-#             my_write_file.close()
-#
-#             first_iteration = False
-#         else:
-#             l = abs((xr - old) / xr) * 100
-#             my_write_file = open('methods/bisection.txt', 'a')
-#             my_write_file.write((
-#                     '\nIteration %d | xl = %0.6f | f(xl) = %0.6f | xu = %0.6f | f(xu) = %0.6f | xr = %0.6f | f(xr) = '
-#                     '%0.6f | error =%.2f\n' % (
-#                         step, x0, f(x0), x1, f(x1), xr, f(xr), l)))
-#             my_write_file.close()
-#
-#         x0 = x1
-#         x1 = xr
-#         step = step + 1
-#         if first_iteration1:
-#             condition = True
-#             first_iteration1 = False
-#         else:
-#             condition = abs(((xr - old) / xr) * 100) >= e
-#     my_write_file = open('methods/bisection.txt', 'a')
-#     my_write_file.write('\nRequired Root is : %0.8f=' % xr)
-#     my_write_file.close()
+def newton_raphson(xl, e):
+    my_write_file = open('methods/newton.txt', 'a')
+    my_write_file.write(
+        '\n\n** NEWTON METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
+    my_write_file.close()
+    step = 1
+    flag = 1
+    old=0
+    xr=0
+    first_iteration = True
+    condition = True
+    while condition:
+        old = xr
+        if gi(xl) == 0:
+            print('Divide by zero error!')
+            my_write_file = open('methods/newton.txt', 'a')
+            my_write_file.write('Divide by zero error!')
+            my_write_file.close()
+            break
+        xr = xl - (f(xl) / gi(xl))
+        if first_iteration:
+            l=0
+            my_write_file = open('methods/newton.txt', 'a')
+            my_write_file.write((
+                    'Iteration %d | xl = %0.6f | f(xl) = %0.6f | gi(xl)= %0.6f |'
+                    ' error =%.2f\n' % (
+                        step, xl, f(xl), gi(xl), l)))
+            my_write_file.close()
+        else:
+            l = abs((xr - old) / xr) * 100
+            my_write_file = open('methods/newton.txt', 'a')
+            my_write_file.write((
+                    'Iteration %d | xl = %0.6f | f(xl) = %0.6f | gi(xl)= %0.6f |'
+                    ' error =%.2f\n' % (
+                        step, xl, f(xl), gi(xl), l)))
+            my_write_file.close()
+        condition = abs(((xr - old) / xr) * 100) >= e
+        xl = xr
+        step = step + 1
+    if not condition:
+        my_write_file = open('methods/newton.txt', 'a')
+        my_write_file.write('\nRequired Root is : %0.8f=' % xr)
+        my_write_file.close()
+    else:
+        my_write_file = open('methods/newton.txt', 'a')
+        my_write_file.write('\nNot Convergent.')
+        my_write_file.close()
+def secant(x0, x1, e):
+    step = 1
+    my_write_file = open('methods/secant.txt', 'a')
+    my_write_file.write('\n\n** SECANT METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
+    my_write_file.close()
+    condition = True
+    old = 0
+    xr = 0
+    first_iteration = True
+    first_iteration1 = True
+    while condition:
+        old = xr
+        xr = x0 - (x1 - x0) * f(x0) / (f(x1) - f(x0))
+
+        if first_iteration:
+            l = 0
+            my_write_file = open('methods/secant.txt', 'a')
+            my_write_file.write((
+                    'Iteration %d | x0 = %0.6f | f(x0) = %0.6f | x1 = %0.6f | f(x1) = %0.6f | '
+                    'xr = %0.6f | f(xr) = %0.6f | error =%.2f\n' % (
+                        step, x0, f(x0), x1, f(x1), xr, f(xr), l)))
+            my_write_file.close()
+
+            first_iteration = False
+        else:
+            l = abs((xr - old) / xr) * 100
+            my_write_file = open('methods/secant.txt', 'a')
+            my_write_file.write((
+                    'Iteration %d | x0 = %0.6f | f(x0) = %0.6f | x1 = %0.6f | f(x1) = %0.6f | '
+                    'xr = %0.6f | f(xr) = %0.6f | error =%.2f\n' % (
+                        step, x0, f(x0), x1, f(x1), xr, f(xr), l)))
+            my_write_file.close()
+
+        x0 = x1
+        x1 = xr
+        step = step + 1
+        if first_iteration1:
+            condition = True
+            first_iteration1 = False
+        else:
+            condition = abs(((xr - old) / xr) * 100) >= e
+    my_write_file = open('methods/secant.txt', 'a')
+    my_write_file.write('\nRequired Root is : %0.8f' % xr)
+    my_write_file.close()
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -288,7 +291,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.stackedWidget.setCurrentIndex(0)
         self.pow_list.setCurrentIndex(0)
         self.viewer = Viewer()
-        self.viewer_false = Viewer_false()
         self.guess_el = guess_eli()
         self.default_val()
         # self.setWindowFlags(Qt.FramelessWindowHint)
@@ -397,6 +399,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.x2_widget.setHidden(True)
 
     @pyqtSlot()
+    def on_back_btn_clicked(self):
+        self.stackedWidget.setCurrentIndex(0)
+
+    @pyqtSlot()
+    def on_back_btn_2_clicked(self):
+        self.stackedWidget.setCurrentIndex(0)
+
+    @pyqtSlot()
     def on_sub_btn_2_clicked(self):
         self.pow_custom_pos()
         index = self.pow_list_2.currentText()
@@ -444,7 +454,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.x4_widget_2.setHidden(True)
             self.x3_widget_2.setHidden(True)
             self.x2_widget_2.setHidden(True)
-
     def default_val(self):
         self.x0_edit.setText("0")
         self.x1_edit.setText("0")
@@ -459,74 +468,96 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.xl_edit.setText("0")
         self.xu_edit.setText("0")
         self.error_edit.setText("0")
-
     def message_error(self):
         msgbox = QMessageBox(self)
         msgbox.setWindowIcon(QIcon(r"imgs\question.png"))
         msgbox.setIconPixmap(QPixmap(r"imgs\question (1).png"))
         msgbox.setWindowTitle("E R R O R!!!")
-        msgbox.setText("Enter A Valid Values.")
+        msgbox.setText("The Method Has No Solution")
         msgbox.setStandardButtons(QMessageBox.Ok)
         reply = msgbox.exec()
         if reply == QMessageBox.Ok:
             return reply
-
+    def empty_error(self):
+        msgbox = QMessageBox(self)
+        msgbox.setWindowIcon(QIcon(r"imgs\question.png"))
+        msgbox.setIconPixmap(QPixmap(r"imgs\question (1).png"))
+        msgbox.setWindowTitle("E R R O R!!!")
+        msgbox.setText("Enter All Values!")
+        msgbox.setStandardButtons(QMessageBox.Ok)
+        reply = msgbox.exec()
+        if reply == QMessageBox.Ok:
+            return reply
+    def no_value(self):
+        if self.x0_edit.text() == "" or self.x1_edit.text() == "" or self.x2_edit.text() == "" or self.x3_edit.text() == "" \
+                or self.x4_edit.text() == "" or self.x5_edit.text() == "" or self.x6_edit.text() == "" or self.x7_edit.text() == "" \
+                or self.x8_edit.text() == "" or self.x9_edit.text() == "" or self.xl_edit.text() == "" or self.xu_edit.text() == "" \
+                or self.error_edit.text() == "":
+            return True
+        else:
+            return False
+    @pyqtSlot()
     def on_calc_btn_clicked(self):
-        power = int(self.pow_list.currentText())
-        x0, x1, x2 = float(self.x0_edit.text()), float(self.x1_edit.text()), float(self.x2_edit.text())
-        x3, x4, x5 = float(self.x3_edit.text()), float(self.x4_edit.text()), float(self.x5_edit.text())
-        x6, x7, x8 = float(self.x6_edit.text()), float(self.x7_edit.text()), float(self.x8_edit.text())
-        x9 = float(self.x9_edit.text())
-        xl = float(self.xl_edit.text())
-        xu = float(self.xu_edit.text())
-        err = float(self.error_edit.text())
-        my_list = [x9, x8, x7, x6, x5, x4, x3, x2, x1, x0]
-        count = 10 - (power + 1)
-        for num in range(count, 10):
-            fu.append(my_list[num])
-        if self.index == 0:
-            if (f(xl) * f(xu)) < 0.0:
-                my_write_file = open('methods/bisection.txt', 'w')
-                my_write_file.write(str(np.poly1d(fu)))
-                my_write_file.close()
-                bisection(xl, xu, err)
-                my_write_file = open('methods/bisection.txt', 'a')
-                my_write_file.write(str(power))
-                my_write_file.close()
-                self.viewer.showing('methods/bisection.txt')
-            else:
-                self.message_error()
-                print(xl, xu)
+        check = self.no_value()
+        if check:
+            self.empty_error()
+        else:
+            power = int(self.pow_list.currentText())
+            x0, x1, x2 = float(self.x0_edit.text()), float(self.x1_edit.text()), float(self.x2_edit.text())
+            x3, x4, x5 = float(self.x3_edit.text()), float(self.x4_edit.text()), float(self.x5_edit.text())
+            x6, x7, x8 = float(self.x6_edit.text()), float(self.x7_edit.text()), float(self.x8_edit.text())
+            x9 = float(self.x9_edit.text())
+            xl = float(self.xl_edit.text())
+            xu = float(self.xu_edit.text())
+            err = float(self.error_edit.text())
+            my_list = [x9, x8, x7, x6, x5, x4, x3, x2, x1, x0]
+            count = 10 - (power + 1)
+            for num in range(count, 10):
+                fu.append(my_list[num])
+            if self.index == 0:
+                if (f(xl) * f(xu)) < 0.0:
+                    my_write_file = open('methods/bisection.txt', 'w')
+                    my_write_file.write(str(np.poly1d(fu)))
+                    my_write_file.close()
+                    bisection(xl, xu, err)
+                    my_write_file = open('methods/bisection.txt', 'a')
+                    my_write_file.write(str(power))
+                    my_write_file.close()
+                    self.viewer.showing('methods/bisection.txt')
+                else:
+                    self.message_error()
+                    print(xl, xu)
 
-        elif self.index == 1:
-            if (f(xl) * f(xu)) < 0.0:
-                my_write_file = open('methods/false_position.txt', 'w')
-                my_write_file.write(str(np.poly1d(fu)))
-                my_write_file.close()
-                false_position(xl, xu, err)
-                my_write_file = open('methods/false_position.txt', 'a')
-                my_write_file.write(str(power))
-                my_write_file.close()
-                self.viewer.showing('methods/false_position.txt')
-            else:
-                self.message_error()
+            elif self.index == 1:
+                if (f(xl) * f(xu)) < 0.0:
+                    my_write_file = open('methods/false_position.txt', 'w')
+                    my_write_file.write(str(np.poly1d(fu)))
+                    my_write_file.close()
+                    false_position(xl, xu, err)
+                    my_write_file = open('methods/false_position.txt', 'a')
+                    my_write_file.write(str(power))
+                    my_write_file.close()
+                    self.viewer.showing('methods/false_position.txt')
+                else:
+                    self.message_error()
 
-        elif self.index == 2:
-            pass
+            elif self.index == 2:
+                pass
+                # empty function
 
-        elif self.index == 3:
-            if not True:
-                self.message_error()
-            else:
+            elif self.index == 3:
                 my_write_file = open('methods/newton.txt', 'w')
                 my_write_file.write(str(np.poly1d(fu)))
                 my_write_file.close()
-                # new(xl, err)
+                newton_raphson(xl, err)
                 self.viewer.showing('methods/newton.txt')
 
-
-        elif self.index == 4:
-            pass
+            elif self.index == 4:
+                my_write_file = open('methods/secant.txt', 'w')
+                my_write_file.write(str(np.poly1d(fu)))
+                my_write_file.close()
+                secant(xl, xu, err)
+                self.viewer.showing('methods/secant.txt')
 
     # def on_guess_calc_clicked(self):
     #     x_0_0 = self.edit_00.text()
@@ -546,7 +577,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     #     x_3_2 = self.edit_32.text()
     #     x_3_3 = self.edit_33.text()
     #     self.guess_el.showing()
-
+    @pyqtSlot()
     def on_submit_btn_clicked(self):
         self.index = self.algo_box.currentIndex()
         if self.index == 0:
@@ -560,9 +591,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.title_lbl.setText("Fixed Point Method")
         elif self.index == 3:
             self.stackedWidget.setCurrentIndex(1)
+            self.xu_widget.setHidden(True)
+            self.xl_lbl.setText("Enter The Number Before (x_0) Variable")
             self.title_lbl.setText("Newton Method")
         elif self.index == 4:
             self.stackedWidget.setCurrentIndex(1)
+            self.xl_lbl.setText("Enter The Number Before (x_1) Variable")
+            self.xu_lbl_2.setText("Enter The Number Before (x_0) Variable")
             self.title_lbl.setText("Secant Method")
         else:
             self.stackedWidget.setCurrentIndex(2)
@@ -586,20 +621,6 @@ class Viewer(QWidget):
         self.viewer.textBrowser.setPlainText(str(my_read_file.read()))
         self.show()
         my_read_file.close()
-
-
-class Viewer_false(QWidget):
-    def __init__(self):
-        super(Viewer_false, self).__init__()
-        self.viewer = Ui_Form()
-        self.viewer.setupUi(self)
-
-    def showing(self):
-        my_read_file = open('methods/false_position.txt', 'r')
-        self.viewer.textBrowser.setPlainText(str(my_read_file.read()))
-        self.show()
-        my_read_file.close()
-
 
 class guess_eli(QWidget):
     def __init__(self):

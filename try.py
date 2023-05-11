@@ -1,3 +1,3 @@
-for i in range(5):
-    for j in range(0, 8):
-        print(f"{i} => {j}")
+x = 5
+if x==0 or x== 5:
+    print("Yes")

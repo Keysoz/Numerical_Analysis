@@ -1,0 +1,13 @@
+      5       4       3       2
+-0.9 x + 1.7 x + 2.5 x - 0.9 x + 1.7 x + 2.5
+
+** NEWTON METHOD IMPLEMENTATION **
+--------------------------------------------------
+Iteration 1 | xl = 5.000000 | f(xl) = -1449.000000 | gi(xl)= -1782.300000 | error =0.00
+Iteration 2 | xl = 4.187006 | f(xl) = -458.319486 | gi(xl)= -758.231542 | error =0.00
+Iteration 3 | xl = 3.582547 | f(xl) = -139.102810 | gi(xl)= -337.096235 | error =0.00
+Iteration 4 | xl = 3.169897 | f(xl) = -37.930716 | gi(xl)= -166.403670 | error =0.00
+Iteration 5 | xl = 2.941953 | f(xl) = -7.628142 | gi(xl)= -102.632320 | error =0.00
+Iteration 6 | xl = 2.867628 | f(xl) = -0.638960 | gi(xl)= -85.735225 | error =0.00
+
+Required Root is : 2.86017528=
