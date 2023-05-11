@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>851</width>
+    <height>437</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	border-radius: 5px;
+	background-color: #fff;
+}
+#res_table QHeaderView, #res_table{
+	border: 0px;
+	background-color: #fff;
+	border-radius: 5px;
+	text-align: left;
+}
+#res_table QHeaderView::section{
+	border-radius: 0px;
+	border-bottom: 1px solid #353535;
+	border-top: 1px solid #353535;
+	padding-left: 10px;
+}
+#res_table QHeaderView::item:selected{
+	background-color:55aaff;
+}</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTableWidget" name="res_table">
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="dragDropMode">
+      <enum>QAbstractItemView::NoDragDrop</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerItem</enum>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::SolidLine</enum>
+     </property>
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+     <attribute name="horizontalHeaderCascadingSectionResizes">
+      <bool>false</bool>
+     </attribute>
+     <row>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>i</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>xl</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>f(xl)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>xu</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>f(xu)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>xr</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>f(xr)</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>e</string>
+      </property>
+     </column>
+     <item row="0" column="0">
+      <property name="text">
+       <string>hello</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
