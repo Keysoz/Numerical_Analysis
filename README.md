@@ -1,8 +1,8 @@
 # Numerical Analysis
 
-1 - First you need to install Vs Code [from here](https://code.visualstudio.com/download)\n
-2 - install python [from here](https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe)\n
-3 - then you should install the PyQt5 library by writing the next code in your terminal \n
+1 - First you need to install Vs Code [from here](https://code.visualstudio.com/download)<br />
+2 - install python [from here](https://www.python.org/ftp/python/3.9.13/python-3.9.13-amd64.exe)<br />
+3 - then you should install the PyQt5 library by writing the next code in your terminal <br />
 ```
 pip install PyQt5
 ```
