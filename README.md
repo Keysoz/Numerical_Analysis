@@ -12,3 +12,5 @@ pip install pyqt-tools
 ```
 # Screenshos of the programm
 ![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot1.png)
+![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot2.png)
+![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot3.png)
