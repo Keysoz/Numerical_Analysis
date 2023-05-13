@@ -140,12 +140,12 @@ def false_position(xl, xu, e):
     my_write_file = open('files/false_position.txt', 'a')
     my_write_file.write('\nRequired Root is : %0.8f' % xr)
     my_write_file.close()
-
-
 # def fixed_point(xl, e):
 #     step = 1
+#
 #     my_write_file = open('files/fixed_point.txt', 'a')
-#     my_write_file.write('\n\n** Fixed Point METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
+#     my_write_file.write(
+#         '\n\n** Fixed Point METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
 #     my_write_file.close()
 #     condition = True
 #     old = 0
@@ -161,8 +161,8 @@ def false_position(xl, xu, e):
 #             my_write_file = open('files/fixed_point.txt', 'a')
 #             my_write_file.write((
 #                     'Iteration %d | xl = %0.6f | f(xl) = %0.6f | '
-#                     'xr = %0.6f | f(xr) = %0.6f | error =%.2f\n' % (
-#                         step, xl, f(xl),  xr, f(xr), l)))
+#                     'xr = %0.6f | f(xr) = %0.6f | error =%.2f' % (
+#                         step, xl, f(xl), xr, f(xr), l)) + "%\n")
 #             my_write_file.close()
 #
 #             first_iteration = False
@@ -171,15 +171,20 @@ def false_position(xl, xu, e):
 #             my_write_file = open('files/fixed_point.txt', 'a')
 #             my_write_file.write((
 #                     'Iteration %d | xl = %0.6f | f(xl) = %0.6f | '
-#                     'xr = %0.6f | f(xr) = %0.6f | error =%.2f\n' % (
-#                         step, xl, f(xl), xr, f(xr), l)))
+#                     'xr = %0.6f | f(xr) = %0.6f | error =%.2f' % (
+#                         step, xl, f(xl), xr, f(xr), l)) + "%\n")
 #             my_write_file.close()
 #
 #         xl = xr
 #         step = step + 1
+#         if first_iteration1:
+#             condition = True
+#             first_iteration1 = False
+#         else:
+#             condition = abs(((xr - old) / xr) * 100) >= e
 #         condition = abs(f(xr)) > e
 #     my_write_file = open('files/fixed_point.txt', 'a')
-#     my_write_file.write('\nRequired Root is : %0.8f=' % xr)
+#     my_write_file.write('\nRequired Root is : %0.8f' % xr)
 #     my_write_file.close()
 def newton_raphson(xl, e):
     my_write_file = open('files/newton.txt', 'a')
@@ -188,7 +193,6 @@ def newton_raphson(xl, e):
     my_write_file.close()
     step = 1
     flag = 1
-    old=0
     xr=0
     first_iteration = True
     condition = True
@@ -272,7 +276,6 @@ def secant(x0, x1, e):
     my_write_file = open('files/secant.txt', 'a')
     my_write_file.write('\nRequired Root is : %0.8f' % xr)
     my_write_file.close()
-
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -289,7 +292,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.default_val()
         # self.setWindowFlags(Qt.FramelessWindowHint)
         # self.setAttribute(Qt.WA_TranslucentBackground)
-
     def mouseMoveEvent(self, a0: QMouseEvent) -> None:
         if self._tracking:
             self._endPos = a0.pos() - self._startPos
