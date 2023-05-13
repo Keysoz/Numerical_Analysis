@@ -25,6 +25,16 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#Form{
+	background-image: url(:/imgs/imgs/WhatsApp Image 2023-05-11 at 14.12.52.jpg);
+
+}
+#textBrowser{
+	background-image: url(:/imgs/imgs/WhatsApp Image 2023-05-11 at 14.12.52.jpg);
+	color: rgba(255, 255, 255, 180)
+}</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QTextBrowser" name="textBrowser">
@@ -36,12 +46,14 @@
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(11, 75, 153, 180);</string>
+      <string notr="true"/>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

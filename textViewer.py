@@ -17,6 +17,14 @@ class Ui_Form(object):
         Form.resize(957, 435)
         Form.setMinimumSize(QtCore.QSize(905, 435))
         Form.setMaximumSize(QtCore.QSize(957, 435))
+        Form.setStyleSheet("#Form{\n"
+"    background-image: url(:/imgs/imgs/WhatsApp Image 2023-05-11 at 14.12.52.jpg);\n"
+"\n"
+"}\n"
+"#textBrowser{\n"
+"    background-image: url(:/imgs/imgs/WhatsApp Image 2023-05-11 at 14.12.52.jpg);\n"
+"    color: rgba(255, 255, 255, 180)\n"
+"}")
         self.gridLayout = QtWidgets.QGridLayout(Form)
         self.gridLayout.setObjectName("gridLayout")
         self.textBrowser = QtWidgets.QTextBrowser(Form)
@@ -25,7 +33,7 @@ class Ui_Form(object):
         font.setBold(True)
         font.setWeight(75)
         self.textBrowser.setFont(font)
-        self.textBrowser.setStyleSheet("background-color: rgba(11, 75, 153, 180);")
+        self.textBrowser.setStyleSheet("")
         self.textBrowser.setObjectName("textBrowser")
         self.gridLayout.addWidget(self.textBrowser, 0, 0, 1, 1)
 
@@ -35,6 +43,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
+import resources
 
 
 if __name__ == "__main__":

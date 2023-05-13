@@ -1,0 +1,1 @@
+Value of x is : 0.0Value of y is : 0.07692307692307693Value of z is : 1.0769230769230769
