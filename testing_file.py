@@ -1,69 +1,71 @@
 import numpy as np
-import scipy
-import scipy.linalg  # SciPy Linear Algebra Library
+import math
+def gu(fu):
+    poly = np.poly1d(fu)
+    return poly
+def f(x):
+    poly = gu(fu)
+    cul = poly(x)
+    return cul
+def g(x):
+    return 1 / math.sqrt(1 + x)
+# Implementing Fixed Point Iteration Method
+def fixed_point(xl, e):
+    step = 1
 
-
-def lu_partial(items_list):
-    n = 3
-    A = np.zeros((n, n + 1))
-    x = np.zeros(n)
-    for i in range(n):
-        for j in range(n + 1):
-            A[i][j] = items_list[i][j]
-    my_write_file = open('files/lu_p_1.txt', 'w')
-    for y in A:
-        my_write_file.write("           ")
-        for h in y:
-            my_write_file.write(str(h) + "        ")
-        my_write_file.write("\n")
-    my_write_file.close()
-    z = 0
-    for P in range(z + 1, n):
-        if abs(A[z, z]) < abs(A[P, z]):
-            A[[P, z]] = A[[z, P]]
-    for P in range(z + 1, n):
-        if abs(A[z + 1, z + 1]) < abs(A[P, z + 1]):
-            A[[P, z + 1]] = A[[z + 1, P]]
-    P, L, U = scipy.linalg.lu(A)
-    my_write_file = open('files/lu_p_1.txt', 'a')
-    my_write_file.write("A:\n")
-    for y in A:
-        my_write_file.write("           ")
-        for h in y:
-            my_write_file.write(str(round(h, 2)) + "        ")
-        my_write_file.write("\n")
-    my_write_file.write("\n\n\n\n")
-    my_write_file.close()
-
-    my_write_file = open('files/lu_p_2.txt', 'w')
-    my_write_file.write("L:\n")
-    for y in L:
-        my_write_file.write("           ")
-        for h in y:
-            my_write_file.write(str(round(h, 2)) + "        ")
-        my_write_file.write("\n")
-    my_write_file.write("\n\n\n\n")
-    my_write_file.close()
-
-    my_write_file = open('files/lu_p_2.txt', 'a')
-    my_write_file.write("U:\n")
-    for y in U:
-        my_write_file.write("           ")
-        for h in y:
-            my_write_file.write(str(round(h, 2)) + "        ")
-        my_write_file.write("\n")
-    my_write_file.close()
-    x[n - 1] = U[n - 1][n] / U[n - 1][n - 1]
-    for i in range(n - 2, -1, -1):
-        x[i] = U[i][n]
-        for j in range(i + 1, n):
-            x[i] = x[i] - U[i][j] * x[j]
-        x[i] = x[i] / U[i][i]
-    my_write_file = open('files/lu_p_3.txt', 'w')
+    my_write_file = open('methods/fixed_point.txt', 'a')
     my_write_file.write(
-        str('           x1 = %0.2f , x2 = %0.2f , x3 = %0.2f' % (x[0], x[1], x[2])))
+        '\n\n** Fixed Point METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
     my_write_file.close()
+    condition = True
+    old = 0
+    xr = 0
+    first_iteration = True
+    first_iteration1 = True
+    while condition:
+        old = xr
+        xr = g(xl)
 
+        if first_iteration:
+            l = 0
+            my_write_file = open('methods/fixed_point.txt', 'a')
+            my_write_file.write((
+                    'Iteration %d | xl = %0.6f | f(xl) = %0.6f | '
+                    'xr = %0.6f | f(xr) = %0.6f | error =%.2f    ‰ \n' % (
+                        step, xl, f(xl), xr, f(xr), l)))
+            my_write_file.close()
 
-my_list = [[7, 8, 5, 6], [4, 6, 7, 8], [5, 6, 7, 8]]
-lu_partial(my_list)
+            first_iteration = False
+        else:
+            l = abs((xr - old) / xr) * 100
+            my_write_file = open('methods/fixed_point.txt', 'a')
+            my_write_file.write((
+                    'Iteration %d | xl = %0.6f | f(xl) = %0.6f | '
+                    'xr = %0.6f | f(xr) = %0.6f | error =%.2f    ‰ \n' % (
+                        step, xl, f(xl), xr, f(xr), l)))
+            my_write_file.close()
+
+        xl = xr
+        step = step + 1
+        if first_iteration1:
+            condition = True
+            first_iteration1 = False
+        else:
+            condition = abs(((xr - old) / xr) * 100) >= e
+        condition = abs(f(xr)) > e
+    my_write_file = open('methods/fixed_point.txt', 'a')
+    my_write_file.write('\nRequired Root is : %0.8f=' % xr)
+    my_write_file.close()
+gi = 0
+i = int(input("Please Enter The Max Of Pow X="))
+fu = [0]
+step2 = i
+while gi <= i:
+    z = float(input('Please Enter The Number Before X^%d Variable=' % step2))
+    fu.append(z)
+    gi = gi + 1
+    step2=step2-1
+gu(fu)
+xl = float(input('xl= '))
+e = float(input("Tolerable Error %:= "))
+fixed_point(xl, e)

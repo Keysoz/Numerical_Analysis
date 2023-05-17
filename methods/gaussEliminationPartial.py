@@ -31,7 +31,7 @@ def gauss_partial(items_list):
     for i in range(n):
         if a[i][i] == 0.0:
             my_write_file = open('files/gauss_partial_1.txt', 'w')
-            my_write_file.write("Divide by zero detected!")
+            my_write_file.write("\n\n\n\t\t\tDivide by zero detected!")
             my_write_file.close()
 
         for j in range(i + 1, n):

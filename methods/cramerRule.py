@@ -47,12 +47,12 @@ def findSolution(coeff):
     D3 = determinantOfMatrix(d3)
 
     my_write_file = open('files/cramer_2.txt', 'w')
-    my_write_file.write(f"D is : " + str(D) + "\n")
+    my_write_file.write(f"\n      D is : " + str(D) + "\n")
     my_write_file.close()
     my_write_file = open('files/cramer_2.txt', 'a')
-    my_write_file.write(f"D1 is : " + str(D1) + "\n")
-    my_write_file.write(f"D2 is : " + str(D2) + "\n")
-    my_write_file.write(f"D3 is : " + str(D3) + "\n")
+    my_write_file.write(f"      D1 is : " + str(D1) + "\n")
+    my_write_file.write(f"      D2 is : " + str(D2) + "\n")
+    my_write_file.write(f"      D3 is : " + str(D3) + "\n")
     my_write_file.close()
 
     # Case 1
@@ -66,11 +66,11 @@ def findSolution(coeff):
         # calculating z using cramer's rule
         z = D3 / D
         my_write_file = open('files/cramer_3.txt', 'w')
-        my_write_file.write("Value of x is : " + str(x) + "\n")
+        my_write_file.write("\n       Value of x is : " + str(x) + "\n")
         my_write_file.close()
         my_write_file = open('files/cramer_3.txt', 'a')
-        my_write_file.write("Value of y is : " + str(y) + "\n")
-        my_write_file.write("Value of z is : " + str(z) + "\n")
+        my_write_file.write("       Value of y is : " + str(y) + "\n")
+        my_write_file.write("       Value of z is : " + str(z) + "\n")
         my_write_file.close()
 
     # Case 2
@@ -78,12 +78,12 @@ def findSolution(coeff):
         if (D1 == 0 and D2 == 0 and
                 D3 == 0):
             my_write_file = open('files/cramer_3.txt', 'w')
-            my_write_file.write("Infinite solutions")
+            my_write_file.write("\n\n\n\t\t\tInfinite solutions")
             my_write_file.close()
         elif (D1 != 0 or D2 != 0 or
               D3 != 0):
             my_write_file = open('files/cramer_3.txt', 'w')
-            my_write_file.write("No solutions")
+            my_write_file.write("\n\n\n\t\t\tNo solutions")
             my_write_file.close()
 
 
@@ -100,12 +100,9 @@ def cramer(items_list):
         for j in range(n + 1):
             coeff[i][j] = items_list[i][j]
     my_write_file = open('files/cramer_1.txt', 'w')
-    my_write_file.write("\n\n")
     for y in coeff:
         my_write_file.write("\n     ")
         for h in y:
             my_write_file.write(str(h) + "        ")
-        my_write_file.write("\n")
-    my_write_file.write("\n\n")
     my_write_file.close()
     findSolution(coeff)

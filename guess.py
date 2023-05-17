@@ -14,7 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_guess(object):
     def setupUi(self, guess):
         guess.setObjectName("guess")
-        guess.resize(820, 580)
+        guess.resize(1080, 456)
+        guess.setMinimumSize(QtCore.QSize(1080, 450))
         guess.setStyleSheet("#guess{\n"
 "    background-image: url(:/imgs/imgs/WhatsApp Image 2023-05-11 at 14.12.52.jpg);\n"
 "}\n"

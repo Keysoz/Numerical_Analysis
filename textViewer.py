@@ -14,9 +14,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(957, 435)
-        Form.setMinimumSize(QtCore.QSize(905, 435))
-        Form.setMaximumSize(QtCore.QSize(957, 435))
+        Form.resize(946, 461)
+        Form.setMinimumSize(QtCore.QSize(946, 461))
+        Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         Form.setStyleSheet("#Form{\n"
 "    background-image: url(:/imgs/imgs/WhatsApp Image 2023-05-11 at 14.12.52.jpg);\n"
 "\n"

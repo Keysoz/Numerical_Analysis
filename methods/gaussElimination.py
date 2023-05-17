@@ -1,5 +1,4 @@
 import numpy as np
-import sys
 def gauss_elimination(items_list):
     n = 3
     a = np.zeros((n, n + 1))
@@ -8,18 +7,19 @@ def gauss_elimination(items_list):
         for j in range(n + 1):
             a[i][j] = items_list[i][j]
     my_write_file = open('files/guess_1.txt', 'w')
+    my_write_file.write("\n")
     for y in a:
-        my_write_file.write("\n                        ")
+        my_write_file.write("                        ")
         for h in y:
-            my_write_file.write(str(h) + "        ")
+            my_write_file.write(str(round(h, 2)) + "        ")
         my_write_file.write("\n")
-    my_write_file.write("\n\n\n")
+    my_write_file.write("\n\n")
     my_write_file.close()
     # Applying Gauss Elimination
     for i in range(n):
         if a[i][i] == 0.0:
             my_write_file = open('files/guess_1.txt', 'w')
-            my_write_file.write("Divide by zero detected!")
+            my_write_file.write("\n\n\n\t\t\tDivide by zero detected!\n\n\n")
             my_write_file.close()
 
         for j in range(i + 1, n):

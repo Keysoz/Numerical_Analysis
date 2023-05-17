@@ -33,7 +33,6 @@ def lu_partial(items_list):
         for h in y:
             my_write_file.write(str(round(h, 2)) + "        ")
         my_write_file.write("\n")
-    my_write_file.write("\n")
     my_write_file.close()
 
     my_write_file = open('files/lu_p_2.txt', 'w')
@@ -43,6 +42,7 @@ def lu_partial(items_list):
         for h in y:
             my_write_file.write(str(round(h, 2)) + "        ")
         my_write_file.write("\n")
+    my_write_file.write("\n")
     my_write_file.close()
 
     my_write_file = open('files/lu_p_2.txt', 'a')

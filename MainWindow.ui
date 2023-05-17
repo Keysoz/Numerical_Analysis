@@ -118,10 +118,13 @@ QComboBox QListView::item:selected{
 }
 #algo_lbl{
 	color: rgba(22, 128, 194, 180);
+}
+#label_3, #label_7{
+	color: rgba(255, 255, 255, 175)
 }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="main_page">
        <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -238,7 +241,7 @@ QComboBox QListView::item:selected{
                  <widget class="QComboBox" name="algo_box">
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
+                    <width>300</width>
                     <height>35</height>
                    </size>
                   </property>
@@ -255,7 +258,7 @@ QComboBox QListView::item:selected{
                   </property>
                   <item>
                    <property name="text">
-                    <string> Bisection Method</string>
+                    <string>Bisection Method</string>
                    </property>
                   </item>
                   <item>
@@ -627,16 +630,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -706,16 +715,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -785,16 +800,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1031,10 +1052,19 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1150,16 +1180,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1229,16 +1265,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1308,16 +1350,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1394,16 +1442,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1473,16 +1527,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1552,16 +1612,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1631,16 +1697,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1710,16 +1782,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1789,16 +1867,22 @@ QComboBox QListView::item:selected{
                 </font>
                </property>
                <property name="text">
-                <string>0</string>
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>6</number>
+               </property>
+               <property name="frame">
+                <bool>true</bool>
                </property>
                <property name="echoMode">
                 <enum>QLineEdit::Normal</enum>
                </property>
-               <property name="cursorPosition">
-                <number>1</number>
-               </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
+               </property>
+               <property name="placeholderText">
+                <string>0</string>
                </property>
               </widget>
              </item>
@@ -1851,6 +1935,9 @@ QComboBox QListView::item:selected{
              <property name="toolTip">
               <string>X 1-1</string>
              </property>
+             <property name="maxLength">
+              <number>6</number>
+             </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
@@ -1882,6 +1969,9 @@ QComboBox QListView::item:selected{
              </property>
              <property name="toolTip">
               <string>X 1-2</string>
+             </property>
+             <property name="maxLength">
+              <number>6</number>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -1915,6 +2005,9 @@ QComboBox QListView::item:selected{
              <property name="toolTip">
               <string>X 2-2</string>
              </property>
+             <property name="maxLength">
+              <number>6</number>
+             </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
@@ -1947,6 +2040,9 @@ QComboBox QListView::item:selected{
              <property name="toolTip">
               <string>X 0-2</string>
              </property>
+             <property name="maxLength">
+              <number>6</number>
+             </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
@@ -1978,6 +2074,9 @@ QComboBox QListView::item:selected{
              </property>
              <property name="toolTip">
               <string>X 2-3</string>
+             </property>
+             <property name="maxLength">
+              <number>6</number>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -2025,6 +2124,9 @@ QComboBox QListView::item:selected{
              <property name="toolTip">
               <string>X 1-0</string>
              </property>
+             <property name="maxLength">
+              <number>6</number>
+             </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
@@ -2069,6 +2171,9 @@ QComboBox QListView::item:selected{
              </property>
              <property name="toolTip">
               <string>X 0-0</string>
+             </property>
+             <property name="maxLength">
+              <number>6</number>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -2131,6 +2236,9 @@ QComboBox QListView::item:selected{
              <property name="toolTip">
               <string>X 2-0</string>
              </property>
+             <property name="maxLength">
+              <number>6</number>
+             </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
@@ -2162,6 +2270,9 @@ QComboBox QListView::item:selected{
              </property>
              <property name="toolTip">
               <string>X 2-1</string>
+             </property>
+             <property name="maxLength">
+              <number>6</number>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
@@ -2235,6 +2346,9 @@ QComboBox QListView::item:selected{
              <property name="toolTip">
               <string>X 1-1</string>
              </property>
+             <property name="maxLength">
+              <number>6</number>
+             </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
@@ -2267,6 +2381,9 @@ QComboBox QListView::item:selected{
              <property name="toolTip">
               <string>X 0-1</string>
              </property>
+             <property name="maxLength">
+              <number>6</number>
+             </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>
              </property>
@@ -2298,6 +2415,9 @@ QComboBox QListView::item:selected{
              </property>
              <property name="toolTip">
               <string>X 0-3</string>
+             </property>
+             <property name="maxLength">
+              <number>6</number>
              </property>
              <property name="alignment">
               <set>Qt::AlignCenter</set>

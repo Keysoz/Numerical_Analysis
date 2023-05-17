@@ -18,6 +18,7 @@ def fixedPointIteration(xl, e):
     old = 0
     condition = True
     fristIteration = True
+    fristIteration1 = True
     while condition:
         old=xr
         xr = g(xl)
@@ -30,21 +31,13 @@ def fixedPointIteration(xl, e):
             print('Iteration-%d, xr = %0.6f and f(xr) = %0.6f  and error %0.6f' % (step, xr, f(xr), l),"%")
         xl = xr
         step = step + 1
-
-        condition = abs(f(xr)) > e
-
-    print('\nRequired root is: %0.8f' % xr)
-
-gi = 0
-i = int(input("Please Enter The Max Of Pow X="))
-fu = [0]
-step2 = i
-while gi <= i:
-    z = float(input('Please Enter The Number Before X^%d Variable='%(step2)))
-    fu.append(z)
-    gi = gi + 1
-    step2=step2-1
-gu(fu)
-xl = float(input('xl= '))
-e = float(input("Tolerable Error %:= "))
+        if fristIteration1 == True:
+            condition = True
+            fristIteration1 = False
+        else:
+            condition = abs(((xr - old) / xr) * 100) >= e
+    print('\nRequired Root is : %0.8f=' % xr)
+fu = [-0.9, 1.7, 2.5]
+xl = 5
+e = 0.7
 fixedPointIteration(xl, e)
