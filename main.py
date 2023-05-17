@@ -279,6 +279,9 @@ def secant(x0, x1, e):
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
+        self.setWindowIcon(QIcon("imgs/loggo_1.png"))
+        self.setWindowIconText("Numerical Analysis")
+        self.setWindowTitle("Numerical Analysis Calculator")
         self.index = None
         self._tracking = None
         self._startPos = None
@@ -627,6 +630,9 @@ class Viewer(QWidget):
         super(Viewer, self).__init__()
         self.viewer = Ui_Form()
         self.viewer.setupUi(self)
+        self.setWindowIcon(QIcon("imgs/loggo_1.png"))
+        self.setWindowIconText("Results Page")
+        self.setWindowTitle("Results Page")
 
     def showing(self, file):
         my_read_file = open(file, 'r')
@@ -641,6 +647,9 @@ class GuessEli(QWidget):
         self.guess = Ui_guess()
         self.guess.setupUi(self)
         self.hide_icons()
+        self.setWindowIcon(QIcon("imgs/loggo_1.png"))
+        self.setWindowIconText("Results Page")
+        self.setWindowTitle("Results Page")
 
     def showing(self, file1, file2):
         my_read_file_1 = open(file1, 'r')
