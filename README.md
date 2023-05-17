@@ -14,3 +14,5 @@ pip install pyqt-tools
 ![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot1.png)
 ![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot2.png)
 ![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot3.png)
+![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot4.png)
+![alt text](https://github.com/Keysoz/Numerical_Analysis/blob/main/ScreenShots/Screenshot5.png)
