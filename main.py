@@ -289,9 +289,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.stackedWidget.setCurrentIndex(0)
         self.pow_list.setCurrentIndex(0)
+        self.tab_order()
         self.viewer = Viewer()
         self.guess_el = GuessEli()
-        self.default_val()
         # self.setWindowFlags(Qt.FramelessWindowHint)
         # self.setAttribute(Qt.WA_TranslucentBackground)
 
@@ -378,6 +378,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         else:
             return False
 
+    def clear_val(self):
+        self.x9_edit.clear()
+        self.x8_edit.clear()
+        self.x7_edit.clear()
+        self.x6_edit.clear()
+        self.x5_edit.clear()
+        self.x4_edit.clear()
+        self.x3_edit.clear()
+        self.x2_edit.clear()
+        self.x1_edit.clear()
+        self.x0_edit.clear()
+        self.xl_edit.clear()
+        self.xu_edit.clear()
+        self.error_edit.clear()
+
     def reset_boxes(self):
         self.edit_00.clear()
         self.edit_01.clear()
@@ -391,6 +406,31 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.edit_21.clear()
         self.edit_22.clear()
         self.edit_23.clear()
+
+    def tab_order(self):
+        self.setTabOrder(self.x9_edit, self.x8_edit)
+        self.setTabOrder(self.x8_edit, self.x7_edit)
+        self.setTabOrder(self.x7_edit, self.x6_edit)
+        self.setTabOrder(self.x6_edit, self.x5_edit)
+        self.setTabOrder(self.x5_edit, self.x4_edit)
+        self.setTabOrder(self.x4_edit, self.x3_edit)
+        self.setTabOrder(self.x3_edit, self.x2_edit)
+        self.setTabOrder(self.x2_edit, self.x1_edit)
+        self.setTabOrder(self.x1_edit, self.x0_edit)
+        self.setTabOrder(self.x0_edit, self.xl_edit)
+        self.setTabOrder(self.xl_edit, self.xu_edit)
+        self.setTabOrder(self.xu_edit, self.error_edit)
+        self.setTabOrder(self.edit_00, self.edit_01)
+        self.setTabOrder(self.edit_01, self.edit_02)
+        self.setTabOrder(self.edit_02, self.edit_03)
+        self.setTabOrder(self.edit_03, self.edit_10)
+        self.setTabOrder(self.edit_10, self.edit_11)
+        self.setTabOrder(self.edit_11, self.edit_12)
+        self.setTabOrder(self.edit_12, self.edit_13)
+        self.setTabOrder(self.edit_13, self.edit_20)
+        self.setTabOrder(self.edit_20, self.edit_21)
+        self.setTabOrder(self.edit_21, self.edit_22)
+        self.setTabOrder(self.edit_22, self.edit_23)
 
     @pyqtSlot()
     def on_exit_btn_clicked(self):
@@ -408,29 +448,50 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             return
 
     def on_sub_btn_clicked(self):
-        self.default_val()
         self.pow_custom_bisection()
         index = self.pow_list.currentText()
         if index == "8":
             self.x9_widget.setHidden(True)
+            self.x9_edit.setText('0')
+            self.x8_edit.setText('0')
+            self.x7_edit.setText('0')
+            self.x6_edit.setText('0')
+            self.x5_edit.setText('0')
+            self.x4_edit.setText('0')
+            self.x3_edit.setText('0')
+            self.x2_edit.setText('0')
         elif index == "7":
             self.x9_widget.setHidden(True)
             self.x8_widget.setHidden(True)
+            self.x9_edit.setText('0')
+            self.x8_edit.setText('0')
         elif index == "6":
             self.x9_widget.setHidden(True)
             self.x8_widget.setHidden(True)
             self.x7_widget.setHidden(True)
+            self.x9_edit.setText('0')
+            self.x8_edit.setText('0')
+            self.x7_edit.setText('0')
         elif index == "5":
             self.x9_widget.setHidden(True)
             self.x8_widget.setHidden(True)
             self.x7_widget.setHidden(True)
             self.x6_widget.setHidden(True)
+            self.x9_edit.setText('0')
+            self.x8_edit.setText('0')
+            self.x7_edit.setText('0')
+            self.x6_edit.setText('0')
         elif index == "4":
             self.x9_widget.setHidden(True)
             self.x8_widget.setHidden(True)
             self.x7_widget.setHidden(True)
             self.x6_widget.setHidden(True)
             self.x5_widget.setHidden(True)
+            self.x9_edit.setText('0')
+            self.x8_edit.setText('0')
+            self.x7_edit.setText('0')
+            self.x6_edit.setText('0')
+            self.x5_edit.setText('0')
         elif index == "3":
             self.x9_widget.setHidden(True)
             self.x8_widget.setHidden(True)
@@ -438,6 +499,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.x6_widget.setHidden(True)
             self.x5_widget.setHidden(True)
             self.x4_widget.setHidden(True)
+            self.x9_edit.setText('0')
+            self.x8_edit.setText('0')
+            self.x7_edit.setText('0')
+            self.x6_edit.setText('0')
+            self.x5_edit.setText('0')
+            self.x4_edit.setText('0')
         elif index == "2":
             self.x9_widget.setHidden(True)
             self.x8_widget.setHidden(True)
@@ -446,6 +513,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.x5_widget.setHidden(True)
             self.x4_widget.setHidden(True)
             self.x3_widget.setHidden(True)
+            self.x9_edit.setText('0')
+            self.x8_edit.setText('0')
+            self.x7_edit.setText('0')
+            self.x6_edit.setText('0')
+            self.x5_edit.setText('0')
+            self.x4_edit.setText('0')
+            self.x3_edit.setText('0')
         elif index == "1":
             self.x9_widget.setHidden(True)
             self.x8_widget.setHidden(True)
@@ -455,9 +529,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.x4_widget.setHidden(True)
             self.x3_widget.setHidden(True)
             self.x2_widget.setHidden(True)
+            self.x9_edit.setText('0')
+            self.x8_edit.setText('0')
+            self.x7_edit.setText('0')
+            self.x6_edit.setText('0')
+            self.x5_edit.setText('0')
+            self.x4_edit.setText('0')
+            self.x3_edit.setText('0')
+            self.x2_edit.setText('0')
 
     def on_back_btn_clicked(self):
-        self.default_val()
+        self.clear_val()
         self.stackedWidget.setCurrentIndex(0)
 
     def on_back_btn_2_clicked(self):
@@ -593,7 +675,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def on_submit_btn_clicked(self):
         self.pow_list.setCurrentIndex(0)
-        self.default_val()
+        self.clear_val()
         self.reset_boxes()
         self.pow_custom_bisection()
         self.index = self.algo_box.currentIndex()
@@ -606,32 +688,36 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         elif self.index == 2:
             self.stackedWidget.setCurrentIndex(1)
             self.xu_widget.setHidden(True)
-            self.xl_lbl.setText("Enter The Number Before (x_0) Variable")
+            self.xl_lbl.setText("Enter The Number OF (x_0) Variable")
             self.title_lbl.setText("Fixed Point Method")
         elif self.index == 3:
             self.stackedWidget.setCurrentIndex(1)
             self.xu_widget.setHidden(True)
-            self.xl_lbl.setText("Enter The Number Before (x_0) Variable")
+            self.xl_lbl.setText("Enter The Number OF (x_0) Variable")
             self.title_lbl.setText("Newton Method")
         elif self.index == 4:
             self.stackedWidget.setCurrentIndex(1)
-            self.xl_lbl.setText("Enter The Number Before (x_1) Variable")
-            self.xu_lbl_2.setText("Enter The Number Before (x_0) Variable")
+            self.xl_lbl.setText("Enter The Number OF (x_1) Variable")
+            self.xu_lbl_2.setText("Enter The Number OF (x_0) Variable")
             self.title_lbl.setText("Secant Method")
         else:
             self.stackedWidget.setCurrentIndex(2)
             self.guess_el.hide_icons()
             if self.index == 5:
+                self.label_2.setText("\tGauss Elimination")
                 self.guess_el.guess_condition_4()
                 self.guess_el.guess_condition_5()
             elif self.index == 6:
+                self.label_2.setText(" Gauss Elimination With P")
                 self.guess_el.guess_condition_4()
                 self.guess_el.guess_condition_5()
             elif self.index == 8:
+                self.label_2.setText("\tLU Decomposition")
                 self.guess_el.guess_condition_3()
                 self.guess_el.guess_condition_2()
                 self.guess_el.guess_condition_1()
             elif self.index == 9:
+                self.label_2.setText(" LU Decomposition With P")
                 self.guess_el.lu_condition_2()
                 self.guess_el.lu_condition_1()
                 self.guess_el.guess_condition_1()
@@ -640,8 +726,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.guess_el.guess_condition_4()
                 self.guess_el.guess_condition_5()
             elif self.index == 10:
+                self.label_2.setText("\tCramer's Rule")
                 self.guess_el.guess_condition_3()
             else:
+                self.label_2.setText("\tGauss Gordan")
                 self.guess_el.hide_icons()
 
 

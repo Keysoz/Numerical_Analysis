@@ -105,7 +105,7 @@ class Ui_MainWindow(object):
 "#algo_lbl{\n"
 "    color: rgba(22, 128, 194, 180);\n"
 "}\n"
-"#label_3, #label_7{\n"
+"#label_3, #label_7, l, #label_2{\n"
 "    color: rgba(255, 255, 255, 175)\n"
 "}")
         self.stackedWidget.setObjectName("stackedWidget")
@@ -1012,6 +1012,18 @@ class Ui_MainWindow(object):
         spacerItem44 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_5.addItem(spacerItem44, 2, 1, 1, 1)
         self.gridLayout_7.addWidget(self.widget_8, 1, 1, 1, 1)
+        self.back_btn_2 = QtWidgets.QPushButton(self.page_2)
+        self.back_btn_2.setMinimumSize(QtCore.QSize(0, 40))
+        self.back_btn_2.setMaximumSize(QtCore.QSize(55, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(16)
+        font.setBold(True)
+        font.setWeight(75)
+        self.back_btn_2.setFont(font)
+        self.back_btn_2.setAutoDefault(False)
+        self.back_btn_2.setObjectName("back_btn_2")
+        self.gridLayout_7.addWidget(self.back_btn_2, 0, 0, 1, 1)
         self.widget_2 = QtWidgets.QWidget(self.page_2)
         self.widget_2.setObjectName("widget_2")
         self.gridLayout_6 = QtWidgets.QGridLayout(self.widget_2)
@@ -1065,24 +1077,23 @@ class Ui_MainWindow(object):
         self.gridLayout_7.addWidget(self.widget_9, 1, 0, 1, 1)
         spacerItem47 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
         self.gridLayout_7.addItem(spacerItem47, 1, 2, 1, 1)
-        self.back_btn_2 = QtWidgets.QPushButton(self.page_2)
-        self.back_btn_2.setMinimumSize(QtCore.QSize(0, 40))
-        self.back_btn_2.setMaximumSize(QtCore.QSize(55, 16777215))
+        self.label_2 = QtWidgets.QLabel(self.page_2)
+        self.label_2.setMinimumSize(QtCore.QSize(0, 54))
         font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(16)
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(20)
         font.setBold(True)
+        font.setItalic(False)
         font.setWeight(75)
-        self.back_btn_2.setFont(font)
-        self.back_btn_2.setAutoDefault(False)
-        self.back_btn_2.setObjectName("back_btn_2")
-        self.gridLayout_7.addWidget(self.back_btn_2, 0, 0, 1, 1)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.gridLayout_7.addWidget(self.label_2, 0, 1, 1, 1)
         self.stackedWidget.addWidget(self.page_2)
         self.gridLayout.addWidget(self.stackedWidget, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
         self.algo_box.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -1176,13 +1187,14 @@ class Ui_MainWindow(object):
         self.edit_01.setPlaceholderText(_translate("MainWindow", "0"))
         self.edit_03.setToolTip(_translate("MainWindow", "X 0-3"))
         self.edit_03.setPlaceholderText(_translate("MainWindow", "0"))
+        self.back_btn_2.setText(_translate("MainWindow", ""))
+        self.back_btn_2.setShortcut(_translate("MainWindow", "Backspace"))
         self.label_7.setText(_translate("MainWindow", "] "))
         self.guess_calc.setToolTip(_translate("MainWindow", "This Button To Calculate Methods"))
         self.guess_calc.setText(_translate("MainWindow", "Calculate"))
         self.guess_calc.setShortcut(_translate("MainWindow", "Return"))
         self.label_3.setText(_translate("MainWindow", " ["))
-        self.back_btn_2.setText(_translate("MainWindow", ""))
-        self.back_btn_2.setShortcut(_translate("MainWindow", "Backspace"))
+        self.label_2.setText(_translate("MainWindow", "     Gauss Elimination"))
 import resources
 
 
