@@ -14,17 +14,17 @@ def lu_partial(items_list):
     for y in A:
         my_write_file.write("           ")
         for h in y:
-            my_write_file.write(str(h) + "        ")
+            my_write_file.write(str(round(h, 3)) + "        ")
         my_write_file.write("\n")
     my_write_file.write("\n\n")
     my_write_file.close()
     z = 0
-    for P in range(z + 1, n):
+    for P in range(z + 2, n):
         if abs(A[z, z]) < abs(A[P, z]):
             A[[P, z]] = A[[z, P]]
-    for P in range(z + 1, n):
-        if abs(A[z + 1, z + 1]) < abs(A[P, z + 1]):
-            A[[P, z + 1]] = A[[z + 1, P]]
+    for P in range(z, n):
+        if abs(A[z, z]) < abs(A[P, z]):
+            A[[P, z]] = A[[z, P]]
     P, L, U = scipy.linalg.lu(A)
     my_write_file = open('files/lu_p_1.txt', 'a')
     my_write_file.write("A:\n")

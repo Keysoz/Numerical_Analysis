@@ -16,7 +16,7 @@ def gauss_gordan(items_list):
     for i in range(n):
         if a[i][i] == 0.0:
             my_write_file = open('files/gordan_1.txt', 'w')
-            my_write_file.write("\n\n\n\t\t\tDivide by zero detected!\n")
+            my_write_file.write("\n\n\n\tDivide by zero detected!\n")
             my_write_file.close()
         for j in range(n):
             if i != j:

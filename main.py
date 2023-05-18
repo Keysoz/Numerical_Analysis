@@ -348,20 +348,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         msgbox.setStandardButtons(QMessageBox.Ok)
         reply = msgbox.exec()
         if reply == QMessageBox.Ok:
-            return reply
+            msgbox.close()
 
     def empty_error(self):
-        msgbox = QMessageBox(self)
-        msgbox.setMinimumSize(600, 400)
-        msgbox.setWindowIcon(QIcon(r"imgs\question.png"))
-        msgbox.setIconPixmap(QPixmap(r"imgs\question (1).png"))
-        msgbox.setWindowTitle("E R R O R!!!")
-        msgbox.setText("Enter All Values!")
-        msgbox.setStandardButtons(QMessageBox.Ok)
-        reply = msgbox.exec()
+        msgbox_2 = QMessageBox(self)
+        msgbox_2.setMinimumSize(600, 400)
+        msgbox_2.setWindowIcon(QIcon(r"imgs\question.png"))
+        msgbox_2.setIconPixmap(QPixmap(r"imgs\question (1).png"))
+        msgbox_2.setWindowTitle("E R R O R!!!")
+        msgbox_2.setText("Enter All Values!")
+        msgbox_2.setStandardButtons(QMessageBox.Ok)
+        reply = msgbox_2.exec()
         if reply == QMessageBox.Ok:
-            return reply
-
+            msgbox_2.close()
     def no_value(self):
         if self.x0_edit.text() == "" or self.x1_edit.text() == "" or self.x2_edit.text() == "" or self.x3_edit.text() == "" \
                 or self.x4_edit.text() == "" or self.x5_edit.text() == "" or self.x6_edit.text() == "" or self.x7_edit.text() == "" \
@@ -544,6 +543,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         check = self.no_value()
         if check:
             self.empty_error()
+            return
         else:
             power = int(self.pow_list.currentText())
             x0, x1, x2 = float(self.x0_edit.text()), float(
@@ -583,6 +583,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.viewer.showing('files/bisection.txt')
                 else:
                     self.message_error()
+                    return
                 my_write_file = open('files/bisection.txt', 'w')
                 my_write_file.write("")
                 my_write_file.close()
@@ -596,6 +597,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.viewer.showing('files/false_position.txt')
                 else:
                     self.message_error()
+                    return
                 my_write_file = open('files/false_position.txt', 'w')
                 my_write_file.write("")
                 my_write_file.close()
@@ -648,8 +650,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.guess_el.showing('files/guess_1.txt', 'files/guess_2.txt')
             elif self.index == 6:
                 gaussEliminationPartial.gauss_partial(my_list_2)
-                self.guess_el.showing(
-                    'files/gauss_partial_1.txt', 'files/gauss_partial_2.txt')
+                self.guess_el.cramer_showing(
+                    'files/gauss_partial_1.txt', 'files/gauss_partial_2.txt', 'files/gauss_partial_3.txt')
             elif self.index == 7:
                 gaussGordan.gauss_gordan(my_list_2)
                 self.guess_el.showing(
@@ -706,6 +708,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.guess_el.guess_condition_5()
             elif self.index == 6:
                 self.label_2.setText(" Gauss Elimination With P")
+                self.guess_el.guess_condition_1()
+                self.guess_el.guess_condition_2()
+                self.guess_el.guess_condition_3()
                 self.guess_el.guess_condition_4()
                 self.guess_el.guess_condition_5()
             elif self.index == 8:
@@ -816,4 +821,7 @@ class GuessEli(QWidget):
 
 
 if __name__ == "__main__":
-    main_window()
+    try:
+        main_window()
+    except RuntimeError:
+        print("Some RunTime Errors have been happened!!!")

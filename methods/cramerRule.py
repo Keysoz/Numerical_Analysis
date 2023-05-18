@@ -1,3 +1,5 @@
+import numbers
+
 import numpy as np
 import scipy
 import scipy.linalg  # SciPy Linear Algebra Library
@@ -66,11 +68,11 @@ def findSolution(coeff):
         # calculating z using cramer's rule
         z = D3 / D
         my_write_file = open('files/cramer_3.txt', 'w')
-        my_write_file.write("\n       Value of x is : " + str(x) + "\n")
+        my_write_file.write("\n       Value of x is : " + str(round(x, 3)) + "\n")
         my_write_file.close()
         my_write_file = open('files/cramer_3.txt', 'a')
-        my_write_file.write("       Value of y is : " + str(y) + "\n")
-        my_write_file.write("       Value of z is : " + str(z) + "\n")
+        my_write_file.write("       Value of y is : " + str(round(y, 3)) + "\n")
+        my_write_file.write("       Value of z is : " + str(round(z, 3)) + "\n")
         my_write_file.close()
 
     # Case 2
@@ -103,6 +105,6 @@ def cramer(items_list):
     for y in coeff:
         my_write_file.write("\n     ")
         for h in y:
-            my_write_file.write(str(h) + "        ")
+            my_write_file.write(str(round(h, 3)) + "        ")
     my_write_file.close()
     findSolution(coeff)
