@@ -289,6 +289,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.stackedWidget.setCurrentIndex(0)
         self.pow_list.setCurrentIndex(0)
+        self.default_val()
         self.tab_order()
         self.viewer = Viewer()
         self.guess_el = GuessEli()
@@ -453,13 +454,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if index == "8":
             self.x9_widget.setHidden(True)
             self.x9_edit.setText('0')
-            self.x8_edit.setText('0')
-            self.x7_edit.setText('0')
-            self.x6_edit.setText('0')
-            self.x5_edit.setText('0')
-            self.x4_edit.setText('0')
-            self.x3_edit.setText('0')
-            self.x2_edit.setText('0')
         elif index == "7":
             self.x9_widget.setHidden(True)
             self.x8_widget.setHidden(True)
@@ -679,6 +673,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.reset_boxes()
         self.pow_custom_bisection()
         self.index = self.algo_box.currentIndex()
+        self.xu_widget.setHidden(False)
         if self.index == 0:
             self.stackedWidget.setCurrentIndex(1)
             self.title_lbl.setText("Bisection Method")
@@ -688,11 +683,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         elif self.index == 2:
             self.stackedWidget.setCurrentIndex(1)
             self.xu_widget.setHidden(True)
+            self.xu_edit.setText('0')
             self.xl_lbl.setText("Enter The Number OF (x_0) Variable")
             self.title_lbl.setText("Fixed Point Method")
         elif self.index == 3:
             self.stackedWidget.setCurrentIndex(1)
             self.xu_widget.setHidden(True)
+            self.xu_edit.setText('0')
             self.xl_lbl.setText("Enter The Number OF (x_0) Variable")
             self.title_lbl.setText("Newton Method")
         elif self.index == 4:
