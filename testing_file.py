@@ -10,62 +10,43 @@ def f(x):
 def g(x):
     return 1 / math.sqrt(1 + x)
 # Implementing Fixed Point Iteration Method
-def fixed_point(xl, e):
+def fixedPointIteration(xl, e):
+    xr=0
+    print('\n\n*** FIXED POINT ITERATION ***')
     step = 1
-
-    my_write_file = open('methods/fixed_point.txt', 'a')
-    my_write_file.write(
-        '\n\n** Fixed Point METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
-    my_write_file.close()
-    condition = True
+    flag = 1
     old = 0
-    xr = 0
-    first_iteration = True
-    first_iteration1 = True
+    condition = True
+    fristIteration = True
+    fristIteration1 = True
     while condition:
-        old = xr
+        old=xr
         xr = g(xl)
-
-        if first_iteration:
-            l = 0
-            my_write_file = open('methods/fixed_point.txt', 'a')
-            my_write_file.write((
-                    'Iteration %d | xl = %0.6f | f(xl) = %0.6f | '
-                    'xr = %0.6f | f(xr) = %0.6f | error =%.2f    ‰ \n' % (
-                        step, xl, f(xl), xr, f(xr), l)))
-            my_write_file.close()
-
-            first_iteration = False
+        if  fristIteration == True:
+            l=0
+            print('Iteration-%d, xr = %0.6f and f(xr) = %0.6f  and error %0.6f' % (step, xr, f(xr),l),"%")
+            fristIteration = False
         else:
-            l = abs((xr - old) / xr) * 100
-            my_write_file = open('methods/fixed_point.txt', 'a')
-            my_write_file.write((
-                    'Iteration %d | xl = %0.6f | f(xl) = %0.6f | '
-                    'xr = %0.6f | f(xr) = %0.6f | error =%.2f    ‰ \n' % (
-                        step, xl, f(xl), xr, f(xr), l)))
-            my_write_file.close()
-
+            l= abs(xr-old)/xr*100
+            print('Iteration-%d, xr = %0.6f and f(xr) = %0.6f  and error %0.6f' % (step, xr, f(xr), l),"%")
         xl = xr
         step = step + 1
-        if first_iteration1:
+        if fristIteration1 == True:
             condition = True
-            first_iteration1 = False
+            fristIteration1 = False
         else:
             condition = abs(((xr - old) / xr) * 100) >= e
-        condition = abs(f(xr)) > e
-    my_write_file = open('methods/fixed_point.txt', 'a')
-    my_write_file.write('\nRequired Root is : %0.8f=' % xr)
-    my_write_file.close()
+    print('\nRequired Root is : %0.8f=' % xr)
 gi = 0
 i = int(input("Please Enter The Max Of Pow X="))
 fu = [0]
 step2 = i
 while gi <= i:
-    z = float(input('Please Enter The Number Before X^%d Variable=' % step2))
+    z = float(input('Please Enter The Number Before X^%d Variable='%(step2)))
     fu.append(z)
     gi = gi + 1
     step2=step2-1
 gu(fu)
 xl = float(input('xl= '))
 e = float(input("Tolerable Error %:= "))
-fixed_point(xl, e)
+fixedPointIteration(xl, e)

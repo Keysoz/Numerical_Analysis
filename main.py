@@ -143,7 +143,7 @@ def false_position(xl, xu, e):
 
 def fixed_point(xl, e):
     xr = 0
-    my_write_file = open('files/fixed_point.txt', 'w')
+    my_write_file = open('files/fixed_point.txt', 'a')
     my_write_file.write(
         '\n\n** FIXED POINT METHOD IMPLEMENTATION **\n--------------------------------------------------\n')
     my_write_file.close()
@@ -464,6 +464,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.stackedWidget.setCurrentIndex(0)
 
     def on_calc_btn_clicked(self):
+        global fu
         check = self.no_value()
         if check:
             self.empty_error()
@@ -479,38 +480,58 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             xl = float(self.xl_edit.text())
             xu = float(self.xu_edit.text())
             err = float(self.error_edit.text())
-            my_list = [x9, x8, x7, x6, x5, x4, x3, x2, x1, x0]
-            count = 10 - (power + 1)
-            for num in range(count, 10):
-                fu.append(my_list[num])
+            if power == 9:
+                fu = [x9, x8, x7, x6, x5, x4, x3, x2, x1, x0]
+            elif power == 8:
+                fu = [x8, x7, x6, x5, x4, x3, x2, x1, x0]
+            elif power == 7:
+                fu = [x7, x6, x5, x4, x3, x2, x1, x0]
+            elif power == 6:
+                fu = [x6, x5, x4, x3, x2, x1, x0]
+            elif power == 5:
+                fu = [x5, x4, x3, x2, x1, x0]
+            elif power == 4:
+                fu = [x4, x3, x2, x1, x0]
+            elif power == 3:
+                fu = [x3, x2, x1, x0]
+            elif power == 2:
+                fu = [x2, x1, x0]
+            else:
+                fu = [x1, x0]
             if self.index == 0:
+                my_write_file = open('files/bisection.txt', 'w')
+                my_write_file.write(str(np.poly1d(fu)))
+                my_write_file.close()
                 if (f(xl) * f(xu)) < 0.0:
-                    my_write_file = open('files/bisection.txt', 'w')
-                    my_write_file.write(str(np.poly1d(fu)))
-                    my_write_file.close()
                     bisection(xl, xu, err)
-                    my_write_file = open('files/bisection.txt', 'a')
-                    my_write_file.write(str(power))
-                    my_write_file.close()
                     self.viewer.showing('files/bisection.txt')
                 else:
                     self.message_error()
+                my_write_file = open('files/bisection.txt', 'w')
+                my_write_file.write("")
+                my_write_file.close()
 
             elif self.index == 1:
+                my_write_file = open('files/false_position.txt', 'w')
+                my_write_file.write(str(np.poly1d(fu)))
+                my_write_file.close()
                 if f(xl) * f(xu) < 0.0:
-                    my_write_file = open('files/false_position.txt', 'w')
-                    my_write_file.write(str(np.poly1d(fu)))
-                    my_write_file.close()
                     false_position(xl, xu, err)
-                    my_write_file = open('files/false_position.txt', 'a')
-                    my_write_file.write(str(power))
-                    my_write_file.close()
                     self.viewer.showing('files/false_position.txt')
                 else:
                     self.message_error()
+                my_write_file = open('files/false_position.txt', 'w')
+                my_write_file.write("")
+                my_write_file.close()
             elif self.index == 2:
+                my_write_file = open('files/fixed_point.txt', 'w')
+                my_write_file.write(str(np.poly1d(fu)))
+                my_write_file.close()
                 fixed_point(xl, err)
                 self.viewer.showing('files/fixed_point.txt')
+                my_write_file = open('files/fixed_point.txt', 'w')
+                my_write_file.write("")
+                my_write_file.close()
 
             elif self.index == 3:
                 my_write_file = open('files/newton.txt', 'w')
@@ -518,6 +539,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 my_write_file.close()
                 newton_raphson(xl, err)
                 self.viewer.showing('files/newton.txt')
+                my_write_file = open('files/newton.txt', 'w')
+                my_write_file.write("")
+                my_write_file.close()
 
             elif self.index == 4:
                 my_write_file = open('files/secant.txt', 'w')
@@ -525,6 +549,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 my_write_file.close()
                 secant(xl, xu, err)
                 self.viewer.showing('files/secant.txt')
+                my_write_file = open('files/secant.txt', 'w')
+                my_write_file.write("")
+                my_write_file.close()
 
     def on_guess_calc_clicked(self):
         check = self.empty_gauss()
